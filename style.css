@@ -307,6 +307,9 @@ body.landing .site-title {
   padding-left: 1.2em;
 }
 
+.mobile-only {
+  display: none;
+}
 
 @media (max-width: 600px) {
 
@@ -314,7 +317,11 @@ body.landing .site-title {
     flex-direction: column;
   }
 
-  .arrow-group {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
     display: flex;
     flex-direction: row;
     justify-content: center;
