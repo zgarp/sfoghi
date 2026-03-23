@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sfoghi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <a class="site-title" href="index.html">sf.oghi</a>
+
+  <div class="viewer">
+    <button class="arrow" id="prev" onclick="navigate(-1)">&#8592;</button>
+    <div class="entry-window">
+      <div class="entry-header">
+        <div class="entry-date"  id="entry-date"></div>
+        <div class="entry-title" id="entry-title"></div>
+      </div>
+      <div class="entry-body" id="entry-body"></div>
+    </div>
+    <button class="arrow" id="next" onclick="navigate(1)">&#8594;</button>
+  </div>
+
+  <div class="counter" id="counter"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

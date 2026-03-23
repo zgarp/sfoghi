@@ -1,0 +1,308 @@
+/* ============================================================
+   style.css — shared styles for index.html and main.html
+   ============================================================ */
+
+/* ── Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ── Shared body layout ── */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: #f5f5f5 */
+  background: #faf9f7;
+  font-family: Georgia, serif;
+  padding: 60px 20px;
+}
+
+
+/* ── Site title ──
+   Used on both pages.
+   On index.html it is the only element and sits dead centre.
+   On main.html it sits at the top as a link back home. */
+.site-title {
+  font-size: 3rem;
+  color: #111;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  /* margin-bottom: 60px; */
+}
+
+.site-title:hover {
+  text-decoration: underline;
+}
+
+.title-black {
+  color: #111;
+}
+
+.title-red {
+  color: #8b1a1a;
+}
+
+/* On the landing page the title should be vertically centred too.
+   justify-content: center pushes the content to the middle of the
+   vertical axis (because the body is a flex column and is 100vh tall).
+   We also remove the bottom margin that is only needed on main.html. */
+body.landing {
+  justify-content: center;
+}
+
+body.landing .site-title {
+  margin-bottom: 0;
+}
+
+
+/* ── Entry viewer (main.html only) ──
+   A row that holds: left arrow | entry window | right arrow */
+
+/* MENU WINDOW OUTSIDE */
+/* .viewer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 720px;
+} */
+
+/* MENU WINDOW INSIDE */
+.viewer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 720px;
+}
+
+.window-wrapper {
+  position: relative;
+  flex: 1;
+  height: 340px;
+}
+
+/* ── Navigation arrows ── */
+
+.arrow {
+  background: none;
+  /* border: 1px solid #aaa; */
+  border: none;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  padding: 0;
+  transition: background 0.15s;
+  margin: 0;
+  padding: 0;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.arr-single {
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid #333;
+  border-top: 1.5px solid #333;
+}
+
+.arr-left  { transform: rotate(-135deg) translate(-1px, 1px); }
+.arr-right { transform: rotate(45deg) translate(-1px, 1px); }
+
+/* .arr-left  { transform: rotate(-135deg); } */
+/* .arr-right { transform: rotate(45deg); } */
+
+
+/* .arrow {
+  background: none;
+  border: 1px solid #aaa;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  flex-shrink: 0;           
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: background 0.15s;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+} */
+
+
+/* ── Entry window ──
+   Fixed height so the page never jumps.
+   Structured as a column: pinned header on top, scrollable body below. */
+.entry-window {
+  position: relative;
+  flex: 1;
+  border: 1px solid #ccc;
+  background: #fff;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+/* ── Entry header (date + title) ──
+   flex-shrink: 0 means this section never gets squeezed.
+   It is always fully visible at the top of the window. */
+.entry-header {
+  flex-shrink: 0;
+  padding: 28px 32px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.entry-date {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.entry-title {
+  font-size: 1.3rem;
+  color: #111;
+}
+
+
+/* ── Entry body (scrollable text area) ──
+   flex: 1 makes it fill all remaining space inside the window.
+   overflow-y: auto adds a scrollbar only when the text needs it. */
+.entry-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 32px 28px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Thin, unobtrusive scrollbar (Chrome / Safari) */
+.entry-body::-webkit-scrollbar        { width: 4px; }
+.entry-body::-webkit-scrollbar-track  { background: transparent; }
+.entry-body::-webkit-scrollbar-thumb  { background: #ccc; border-radius: 2px; }
+
+
+/* ── Entry counter (e.g. "1 / 3") ── */
+.counter {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #999;
+  text-align: center;
+  width: 100%;
+  max-width: 720px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 40px;
+  padding: 0 135px;  /* to change position of menu */
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #333;
+  padding: 0;
+  margin: 0;
+  transition: opacity 0.15s;
+}
+
+.icon-btn:hover {
+  opacity: 0.5;
+}
+
+.nav-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.nav-wrapper.open {
+  display: block;
+}
+
+.nav-dropdown {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.nav-item:hover {
+  background: #f5f2ee;
+}
+
+.nav-item.active {
+  background: #f0ebe3;
+}
+
+.nav-item-date {
+  font-size: 0.75rem;
+  color: #999;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-item-title {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.entry-body ul, .entry-body ol {
+  padding-left: 1.2em;
+}
