@@ -73,11 +73,20 @@ body.landing .site-title {
 } */
 
 /* MENU WINDOW INSIDE */
-.viewer {
+/* .viewer {
   position: relative;
   display: flex;
   align-items: center;
   gap: 24px;
+  width: 100%;
+  max-width: 720px;
+} */
+
+.viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   width: 100%;
   max-width: 720px;
 }
@@ -159,7 +168,7 @@ body.landing .site-title {
 /* ── Entry window ──
    Fixed height so the page never jumps.
    Structured as a column: pinned header on top, scrollable body below. */
-.entry-window {
+/* .entry-window {
   position: relative;
   flex: 1;
   border: 1px solid #ccc;
@@ -168,6 +177,17 @@ body.landing .site-title {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+} */
+
+.entry-window {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
 }
 
 
@@ -223,6 +243,16 @@ body.landing .site-title {
   max-width: 720px;
 }
 
+/* .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 40px;
+  padding: 0 135px; 
+} */
+
 .site-header {
   display: flex;
   align-items: center;
@@ -230,7 +260,7 @@ body.landing .site-title {
   width: 100%;
   max-width: 720px;
   margin-bottom: 40px;
-  padding: 0 135px;  /* to change position of menu */
+  padding: 0;
 }
 
 .icon-btn {
@@ -305,4 +335,11 @@ body.landing .site-title {
 
 .entry-body ul, .entry-body ol {
   padding-left: 1.2em;
+}
+
+.arrow-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
 }

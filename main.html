@@ -43,7 +43,7 @@
     </button>
   </div>
 
-  <div class="viewer">
+  <!-- <div class="viewer">
     <button class="arrow" id="first" onclick="jumpTo(0)">
       <span class="arr-single arr-left"></span>
       <span class="arr-single arr-left"></span>
@@ -68,6 +68,35 @@
       <span class="arr-single arr-right"></span>
       <span class="arr-single arr-right"></span>
     </button>
+  </div> -->
+
+  <div class="viewer">
+    <div class="entry-window">
+      <div class="entry-header">
+        <div class="entry-date"  id="entry-date"></div>
+        <div class="entry-title" id="entry-title"></div>
+      </div>
+      <div class="entry-body" id="entry-body"></div>
+      <div class="nav-wrapper" id="nav-wrapper">
+        <div class="nav-dropdown" id="nav-dropdown"></div>
+      </div>
+    </div>
+    <div class="arrow-group">
+      <button class="arrow" id="first" onclick="jumpTo(0)">
+        <span class="arr-single arr-left"></span>
+        <span class="arr-single arr-left"></span>
+      </button>
+      <button class="arrow" id="prev" onclick="navigate(-1)">
+        <span class="arr-single arr-left"></span>
+      </button>
+      <button class="arrow" id="next" onclick="navigate(1)">
+        <span class="arr-single arr-right"></span>
+      </button>
+      <button class="arrow" id="last" onclick="jumpTo(entries.length - 1)">
+        <span class="arr-single arr-right"></span>
+        <span class="arr-single arr-right"></span>
+      </button>
+    </div>
   </div>
 
   <div class="counter" id="counter"></div>
