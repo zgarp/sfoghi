@@ -13,6 +13,11 @@
 
 const entries = [
   {
+    date:  "30 Marzo 2026",
+    title: "Etichette",
+    file:  "text_files/30-03-2026.html"
+  },
+  {
     date:  "26 Marzo 2026",
     title: "Macchine mendaci",
     file:  "text_files/26-03-2026.html"
