@@ -14,7 +14,7 @@
 const entries = [
   {
     date:  "30 Marzo 2026",
-    title: "Etichette",
+    title: "Etichette adesive come lo stato di *******",
     file:  "text_files/30-03-2026.html"
   },
   {
