@@ -13,6 +13,11 @@
 
 const entries = [
   {
+    date:  "02 Aprile 2026",
+    title: "Incisivi vs. pavimenti",
+    file:  "text_files/02-04-2026.html"
+  },
+  {
     date:  "30 Marzo 2026",
     title: "Etichette adesive come lo stato di *******",
     file:  "text_files/30-03-2026.html"
